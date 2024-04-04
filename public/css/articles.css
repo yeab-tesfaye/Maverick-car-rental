@@ -1,0 +1,381 @@
+body{
+  overflow-x: hidden;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 120px;
+  padding: 0 50px;
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  
+}
+.logo-name{
+font-size: 30px;
+display: flex;
+align-items: center;
+color: #ffffff;
+}
+
+.footer-logo .brand-name{
+font-size: 50px;
+margin-top:-160px;
+margin-left: 130px !important;
+}
+
+span{
+  margin-right: 20px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.logo{
+  height: 100px;
+}
+a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  transition: color 0.3s ease;
+  margin-right: 40px;
+}
+a:hover{
+  color: blue;
+  
+}
+a.active{
+  color: blue;
+}
+
+
+.menu {
+display: block;
+}
+
+
+.hamburger-menu {
+display: none;
+text-align: center;
+}
+
+.hamburger-menu:hover{
+cursor: pointer;
+}
+
+
+.hidden {
+display: none;
+}
+
+.background{
+background-image: url("../images/why-kei-8e2gal_GIE8-unsplash.jpg");
+background-size: cover;
+height: 1000px;
+width: 100%;
+text-align: center;
+margin-bottom: 50px;
+}
+.title{
+  font-size: 60px;
+  color: #ffffff;
+  margin-top: 740px;
+  font-weight: bolder;
+}
+
+
+
+
+.main{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 40px;
+
+}
+.articles{
+  width: 65%;
+  padding: 0 25px 0 25px; 
+  text-indent: 40px;
+}
+
+.topic{
+  font-size: 40px;
+  font-weight: bolder;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.articles img{
+  width: 70%;
+  margin-left: 10%;
+  margin-top: 40px;
+  border-radius: 15px;
+}
+.articles span{
+  background-color: rgb(237, 237, 237);
+  color:#787878;
+  border-radius: 50px;
+  padding: 7px 20px;
+  margin-bottom: 30px;
+}
+
+.sidebar{
+  width: 30%;
+  height: 2250px;
+  background-color: aliceblue;
+  border: #e3e1e1 solid 1px;
+  border-radius: 15px;
+}
+.sidebar .topic{
+  margin-top: 0;
+  padding: 20px;
+  border-bottom: 1px solid rgb(205, 201, 201);
+}
+
+.Testimonials{
+  margin: 50px 10px;
+}
+.Testimonial{
+  display: flex;
+  background-color: #ffffff;
+  padding: 20px 15px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+}
+.Testimonial .image{
+  width: 35%;
+}
+
+.Testimonial .text{
+  width: 65%;
+}
+
+.Testimonial img{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  
+}
+form input{
+  display: block;
+  width: 300px;
+  height: 40px;
+  margin: 10px 30px;
+  padding: 10px;
+  border: #d8d8d8 solid 1px;
+  border-radius: 10px;
+}
+form textarea{
+ padding: 10px;
+ font-size: 18px;
+ margin-left: 30px;
+ border: #e3e1e1 solid 1px;
+ border-radius: 10px;
+}
+form label{
+  display: block;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  font-weight: 400;
+}
+form #submit{
+  width: 300px;
+  border-radius: 15px;
+  margin: 20px 30px;
+  padding: 5px 10px;
+  color: black;
+  background-color: aqua;
+  font-size: 25px; 
+  transition: all 0.5s ease-in-out;
+}
+form #submit:hover{
+  cursor: pointer;
+  color: white;
+  background-color:royalblue;
+}
+
+
+
+
+
+
+
+.footer-container footer{
+  height: 600px;
+  width: 100%;
+  background-color: black;
+  color: #ffffff;
+  margin-top: 100px;
+ display: flex;
+ justify-content: center;
+ /* flex-wrap: wrap; */
+}
+
+.about,.Contact{
+  width: 400px;
+  margin: 110px;
+}
+.about h2,.Contact h2{
+  margin-bottom: 20px ;
+  font: bold 30px sans-serif;
+}
+.about p, .Contact p{
+  font-size: 20px;
+  color: rgb(213, 208, 208);
+}
+.about .logo{
+  margin-top: 20px;
+}
+.footer-logo{
+  display: flex;
+  flex-direction: column;
+}
+.footer-logo img{
+  width: 300px;
+  height: 300px;
+  margin-left: 100px;
+  margin-bottom: 100px;
+}
+footer ul{
+  list-style: none;
+}
+.social-icons .instagram:hover{
+   color: rgb(235, 76, 211);
+}
+.social-icons .linkedin:hover{
+  color: rgb(76, 114, 241);
+}
+.social-icons .youtube:hover{
+  color: rgb(207, 5, 5);
+}
+
+@media screen and (max-width: 868px) {
+  .menu {
+    display: none;
+  }
+  .logo-name.hidden{
+     display: none;
+   }
+  .header.menu-active {
+      height: auto;
+      display: flex;
+      align-items: baseline;
+      background-color: rgba(0, 0, 0);
+  }
+  .background{
+    height: auto;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px auto;
+    transition: transform 0.3s ease;
+  }
+  .menu-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 40%;
+  }
+  .menu-bar span{
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;  
+  }
+  .menu-bar span:hover{
+   transform: translateX(5px);
+  }
+
+  .menu.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  .menu.active span{
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;  
+  }
+  .menu.active span:hover{
+   transform: translateX(5px);
+  }
+
+  .hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+ 
+}
+
+@media screen and (max-width: 1200px) {
+  
+  .main{
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+  }
+
+  .articles{
+    margin: 20px;
+    width: 100%;
+  }
+  .articles img{
+    width: 80%;
+    margin-left: 5%;
+  }
+  .sidebar{
+    width: 95%;
+    margin-top: 30px;
+    margin-left: 20px !important;
+  }
+  .Testimonials{
+   
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .Testimonial img{
+    margin-left: 20%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+
+  .footer-container footer{
+    height: 100%;
+    width: 100%;
+    color: #ffffff;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  footer .about{
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+  footer .Contact{
+    margin-top: 50px;
+    margin-bottom: 5;
+  }
+
+}
+

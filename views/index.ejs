@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maverick</title>
+  <link rel="shortcut icon" href="images/car-rear-solid2.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+  <section class="background">
+    <header class="header">
+      <div class="logo-name"><a href="#"><img class="logo cursor-pointer" src="images/logo-transparent.png" alt="logo" /></a>
+        <p class="brand-name">Maverick Cars</p>
+      </div>
+
+      <ul class="menu">
+        <span><a href="/" class="<%= activePage === '' ? 'active' : '' %>">Home</a></span>
+        <span><a href="/cars" class="<%= activePage === 'cars' ? 'active' : '' %>">Cars</a></span>
+        <span><a href="/book?content=container1">Booking</a></span>
+        <span><a href="/articles" class="<%= activePage === 'articles' ? 'active' : '' %>">Articles</a></span>
+        <% if (loggedIn) { %>
+          <span id="logoutMenu" class="logout"><a href="/logout">Log Out</a></span>
+        <% } else { %>
+            <span id="registerMenu"><a href="/Registration">Register</a></span>
+        <% } %>
+      </ul>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </header>
+    <div class="center_wrapper">
+      <div class="page_tagline">
+        <h2 class="ppb_title">
+          Find Best Luxury &amp; Sport Cars
+        </h2>
+        <p style="font-size: 23px;
+              color: rgb(196, 196, 196);
+              margin-bottom: 20px;">From as low as $10 per day with limited time offer discounts</p>
+      </div>
+
+      <form class="car_search_form" method="get" action="">
+        <input class="select" style="width: 400px; height: 40px; margin-right: -7px; padding: 10px;" type="text" name="search_car" id="sch-car" placeholder="Search a car">
+        <input class="select cursor-pointer text-white bg-blue-500 hover:bg-blue-800 transition duration-500 ease-in-out" id="car_search_btn" type="submit"
+          value="Search" />
+      </form>
+    </div>
+  </section>
+
+  <div class="description text-center">
+    <p class="text-5xl mt-20 font-bold">First Class Luxury & Sport Car Rental Services</p>
+    <p class="text-gray-500 mt-5 mb-20 text-xl">We offer professional car rental services in our range of
+      high-end vehicles</p>
+  </div>
+
+  <div class="cars mb-5">
+    <div class="modal" style="display: none;">
+     <p class="car-name" >McLaren 570S</p>
+      <div class="modal-content"> 
+        <img class="car-image" src="images/yellow.jpg" alt="">
+        <div class="car-details">
+          <h1>Car Details</h1>
+          <ul>
+            <li><strong>Car Make:</strong> McLaren</li>
+            <li><strong>Car Model:</strong> 570S</li>
+            <li><strong>Year:</strong> 2023</li>
+            <li><strong>Color:</strong> Yellow</li>
+            <li><strong>Mileage:</strong> 5,000 miles</li>
+            <li><strong>Engine:</strong> 2.0L Inline-4</li>
+            <li><strong>Transmission:</strong> Automatic</li>
+            <li><strong>Fuel Type:</strong> Petrol</li>
+            <li><strong>Rent Price:</strong> $6,500</li>
+        </ul>
+        
+          <% if (loggedIn) { %>
+         <button class="<%= activePage === 'book' ? 'active' : '' %> rent-now"  onclick="redirectToSecondPage('container1');">Rent now</button>
+          <% } else { %>
+        <button class="rent-now" id="1" onclick="alert('Please login before booking a car.');"><a href="/Registration">Rent Now</a></button>  
+          <% } %>
+          
+        </div>
+        
+        <span class="close-button">&times;</span>
+      </div>
+    </div>
+    <div class="modal" style="display: none;">
+      <p class="car-name" >BMW E-24</p>
+       <div class="modal-content"> 
+         <img class="car-image" src="images/car-7.jpg" alt="">
+         <div class="car-details">
+           <h1>Car Details</h1>
+           <ul>
+             <li><strong>Car Make:</strong> BMW</li>
+             <li><strong>Car Model:</strong> E-24</li>
+             <li><strong>Year:</strong> 2022</li>
+             <li><strong>Color:</strong> White</li>
+             <li><strong>Mileage:</strong> 30,000 miles</li>
+             <li><strong>Engine:</strong> 1.5L V-6</li>
+             <li><strong>Transmission:</strong> Automatic</li>
+             <li><strong>Fuel Type:</strong> Petrol</li>
+             <li><strong>Rent Price:</strong> $5,000</li>
+         </ul>
+         
+         <% if (loggedIn) { %>
+          <button class="rent-now"  onclick="redirectToSecondPage('container2');">Rent now</button>
+          <% } else { %>
+          <button class="rent-now" id="2" onclick="alert('Please login before booking a car.');"><a href="/Registration">Rent Now</a></button> 
+        <% } %>
+         </div>
+         
+         <span class="close-button">&times;</span>
+       </div>
+     </div>
+     <div class="modal" style="display: none;">
+      <p class="car-name" >Jeep Wrangler</p>
+       <div class="modal-content"> 
+         <img class="car-image" src="images/car-7.jpg" alt="">
+         <div class="car-details">
+           <h1>Car Details</h1>
+           <ul>
+             <li><strong>Car Make:</strong> Jeep</li>
+             <li><strong>Car Model:</strong> Wrangler</li>
+             <li><strong>Year:</strong> 2019</li>
+             <li><strong>Color:</strong> Orange</li>
+             <li><strong>Mileage:</strong> 45,000 miles</li>
+             <li><strong>Engine:</strong> 3.0L V-8</li>
+             <li><strong>Transmission:</strong> Semi-automatic</li>
+             <li><strong>Fuel Type:</strong> Petrol</li>
+             <li><strong>Price:</strong> $5,999</li>
+         </ul>
+         
+         <% if (loggedIn) { %>
+          <button class="rent-now"  onclick="redirectToSecondPage('container3');">Rent now</button>
+          <% } else { %>
+        <button class="rent-now" id="3" onclick="alert('Please login before booking a car.');"><a href="/Registration">Rent Now</a></button> 
+        <% } %>
+         </div>
+         
+         <span class="close-button">&times;</span>
+       </div>
+     </div>
+     <div class="modal" style="display: none;">
+      <p class="car-name" >McLaren 720S</p>
+       <div class="modal-content"> 
+         <img class="car-image" src="images/car-7.jpg" alt="">
+         <div class="car-details">
+           <h1>Car Details</h1>
+           <ul>
+             <li><strong>Car Make:</strong> McLaren</li>
+             <li><strong>Car Model:</strong> 720S</li>
+             <li><strong>Year:</strong> 2021</li>
+             <li><strong>Color:</strong> Silver</li>
+             <li><strong>Mileage:</strong> 10,000 miles</li>
+             <li><strong>Engine:</strong> 1.5L Inline-4</li>
+             <li><strong>Transmission:</strong> Automatic</li>
+             <li><strong>Fuel Type:</strong> Petrol</li>
+             <li><strong>Price:</strong> $6,999</li>
+         </ul>
+         
+         <% if (loggedIn) { %>
+          <button class="rent-now"  onclick="redirectToSecondPage('container4');">Rent now</button>
+          <% } else { %>
+        <button class="rent-now" id="4" onclick="alert('Please login before booking a car.');"><a href="/Registration">Rent Now</a></button> 
+        <% } %>
+         </div>
+         
+         <span class="close-button">&times;</span>
+       </div>
+     </div>
+     <div class="modal" style="display: none;">
+      <p class="car-name" >Ford Mustang GT-CS</p>
+       <div class="modal-content"> 
+         <img class="car-image" src="images/car-7.jpg" alt="">
+         <div class="car-details">
+           <h1>Car Details</h1>
+           <ul>
+             <li><strong>Car Make:</strong> Ford Mustang</li>
+             <li><strong>Car Model:</strong> GT-23</li>
+             <li><strong>Year:</strong> 2018</li>
+             <li><strong>Color:</strong> Black</li>
+             <li><strong>Mileage:</strong> 24,000 miles</li>
+             <li><strong>Engine:</strong> 2.5L Inline-6</li>
+             <li><strong>Transmission:</strong> Automatic</li>
+             <li><strong>Fuel Type:</strong> Petrol</li>
+             <li><strong>Price:</strong> $5,000</li>
+         </ul>
+         
+         <% if (loggedIn) { %>
+          <button class="rent-now"  onclick="redirectToSecondPage('container5');">Rent now</button>
+          <% } else { %>
+        <button class="rent-now" id="5" onclick="alert('Please login before booking a car.');"><a href="/Registration">Rent Now</a></button> 
+        <% } %>
+         </div>
+         
+         <span class="close-button">&times;</span>
+       </div>
+     </div>
+     <div class="modal" style="display: none;">
+      <p class="car-name" >Alpha Romeo 4C</p>
+       <div class="modal-content"> 
+         <img class="car-image" src="images/car-7.jpg" alt="">
+         <div class="car-details">
+           <h1>Car Details</h1>
+           <ul>
+             <li><strong>Car Make:</strong> Alpha Romeo</li>
+             <li><strong>Car Model:</strong> 4C</li>
+             <li><strong>Year:</strong> 2023</li>
+             <li><strong>Color:</strong> Red</li>
+             <li><strong>Mileage:</strong> 5,000 miles</li>
+             <li><strong>Engine:</strong> 1.5L Inline-4</li>
+             <li><strong>Transmission:</strong> Automatic</li>
+             <li><strong>Fuel Type:</strong> Petrol</li>
+             <li><strong>Price:</strong> $5,999</li>
+         </ul>
+         
+         <% if (loggedIn) { %>
+          <button class="rent-now"  onclick="redirectToSecondPage('container6');">Rent now</button>
+          <% } else { %>
+        <button class="rent-now" id="6" onclick="alert('Please login before booking a car.');"><a href="/Registration">Rent Now</a></button> 
+        <% } %>
+         </div>
+         
+         <span class="close-button">&times;</span>
+       </div>
+     </div>
+
+    <div class="image-list grid-container ">
+      <div class="image-container grid-item">
+        <img class="car image" src="images/yellow.jpg" alt="" data-id="1">
+        
+        <div class="overlay">
+          <button class="button see-details">See details</button>
+        </div>
+      </div>
+      <div class="image-container grid-item">
+    <img class="car image" src="images/car3.jpg" alt="" data-id="2">
+        <div class="overlay">
+          <button class="button see-details">See details</button>
+        </div>
+      </div>
+      <div class="image-container grid-item">
+        <img class="car image" src="images/car-8.jpg" alt="">
+        <div class="overlay">
+          <button class="button see-details">See details</button>
+        </div>
+      </div>
+      <div class="image-container grid-item">
+        <img class="car image" src="images/car-3.jpg" alt="">
+        <div class="overlay">
+          <button class="button see-details">See details</button>
+        </div>
+      </div>
+      <div class="image-container grid-item">
+        <img class="car image" src="images/car-4.jpg" alt="">
+        <div class="overlay">
+          <button class="button see-details">See details</button>
+        </div>
+      </div>
+      <div class="image-container grid-item">
+        <img class="car image" src="images/car-6.jpg" alt="">
+        <div class="overlay">
+          <button class="button see-details">See details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <a href="/cars"><input class="<%= activePage === 'cars' ? 'active' : '' %> select more-btn bg-blue-500 cursor-pointer" type="submit" value="Show More" /></a>
+
+
+  <section class="bg-video mb-20">
+    <video autoplay muted loop class="bg-video__content ">
+      <source src="images/Lexus Exclusive Limousine Service.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="bg-video__text">
+      <div>
+        <p class="font-bold text-5xl mb-5">Our Fleet, Your Fleet</p>
+        <div class="text-xl mb-5">We know the difference is in the details and that is why our car
+          rental services, in the tourism and business industry, stand out for their quality, to offer you an unique
+          experience</div>
+        <div class="ppb_header_content">
+          <p><span class="text-4xl ">Call Now (251)-912-3456-78</span></p>
+  <input class="select mt-10 text-white cursor-pointer bg-blue-500 hover:bg-blue-800 transition duration-500 ease-in-out" type="submit"
+            value="Ask Question" style="height: 50px;
+            font-size: 22px;
+      " />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <p class="text-5xl font-bold text-center mb-3">Articles & Tips</p>
+  <p class="text-center text-xl text-gray-500 mb-20">Explore some of the best tips from around the world</p>
+
+  <div class="center">
+    <div class="wrapper">
+      <div class="inner">
+        <div class="card">
+          <img src="images/Article-1.jpg" alt="">
+          <div class="content">
+            <p class="date text-xl font-bold m-5">January 1, 2024</p>
+            <p class="desc text-4xl font-bold m-5">How to choose the right car for you?</p>
+            <p class="detail text-xl text-gray-500 m-5 mb-20 ">Lorem ipsum dolor, sit amet consectetureset
+              assumenda ratione harum deserunt faceres reprehenderit
+              enim. Enim .....</p>
+            <a class="readmore ml-5 text-xl text-gray-500 hover:text-black" href="/articles#topic1">Read More ></a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/backgroud-img.jpg">
+          <div class="content">
+            <p class="date text-xl font-bold m-5">March 18, 2023</p>
+            <p class="desc text-4xl font-bold m-5">Car Rental Mistakes That Can Cost You Big</p>
+            <p class="detail text-xl text-gray-500 m-5 mb-20 ">Lorem ipsum dolor, sit amet consectetureset adipisicing elit.
+              Distinctio explicabo provident ad
+              assumenda ratione harum deserunt faceres reprehenderit
+              enim. Enim .....</p>
+            <a class="readmore ml-5 text-xl text-gray-500 hover:text-black" href="/articles#topic2">Read More ></a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/Article-3.jpg">
+          <div class="content">
+            <p class="date text-xl font-bold m-5">November 22, 2023</p>
+            <p class="desc text-4xl font-bold m-5">What To Do if Your Rental Car Has Met With An
+              Accident</p>
+            <p class="detail text-xl text-gray-500 m-5 mb-20 ">Lorem ipsum dolor, sit amet consectetureset adipisicing elit.
+                Distinctio explicabo provident ad
+                assumenda ratione harum deserunt faceres reprehenderit
+                enim. Enim .....</p>
+            <a class="readmore ml-5 text-xl text-gray-500 hover:text-black" href="/articles#topic3">Read More ></a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/why-kei-8e2gal_GIE8-unsplash.jpg">
+          <div class="content">
+            <p class="date text-xl font-bold m-5">January 13, 2024</p>
+            <p class="desc text-4xl font-bold m-5">Safety Measures</p>
+            <p class="detail text-xl text-gray-500 m-5 mb-20 ">Lorem ipsum dolor, sit amet consectetureset adipisicing elit.
+              Distinctio explicabo provident ad
+              assumenda ratione harum deserunt faceres reprehenderit
+              enim. Enim .....</p>
+            <a class="readmore ml-5 text-xl text-gray-500 hover:text-black" href="/articles#topic4">Read More ></a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/brock-wegner-pWGUMQSWBwI-unsplash.jpg">
+          <div class="content">
+            <p class="date text-xl font-bold m-5">November 22, 2023</p>
+            <p class="desc text-4xl font-bold m-5">Company Policies</p>
+            <p class="detail text-xl text-gray-500 m-5 mb-20 ">Lorem ipsum dolor, sit amet consectetureset adipisicing elit.
+              Distinctio explicabo provident ad
+              assumenda ratione harum deserunt faceres reprehenderit
+              enim. Enim .....</p>
+            <a class="readmore ml-5 text-xl text-gray-500 hover:text-black" href="/articles#topic5">Read More ></a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/philipp-katzenberger-YVkB4W1HRv4-unsplash.jpg" alt="">
+          <div class="content">
+            <p class="date text-xl font-bold m-5">March 18, 2023</p>
+            <p class="desc text-4xl font-bold m-5">Special Offers and Discounts</p>
+            <p class="detail text-xl text-gray-500 m-5 mb-20 ">Lorem ipsum dolor, sit amet consectetureset adipisicing elit.
+              Distinctio explicabo provident ad
+              assumenda ratione harum deserunt faceres reprehenderit
+              enim. Enim .....</p>
+            <a class="readmore ml-5 text-xl text-gray-500 hover:text-black" href="/articles#topic6">Read More ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="map">
+      <button class="active first"></button>
+      <button class="second"></button>
+      
+    </div>
+  </div>
+
+  <section class="footer-container">
+    <footer class="foot">
+
+
+      <div class="footer-logo">
+        <img src="images/logo-transparent.png"  alt="logo" />
+        <p class="brand-name">Maverick Cars</p>
+      </div>
+
+    <div class="about">
+        <ul>
+          <li>
+            <h2>About Us</h2>
+            <p>Getting dressed up and traveling with good friends makes for a shared, unforgettable experience. </p>
+            
+          </li>
+        </ul>
+      </div>
+
+    <div class="Contact">
+        <ul>
+          <li>
+            <h2>Contact info</h2>
+            <p>+251-912-345-678 </p>
+            <p>Bole Medanialem Morning Star mall <br> 3rd floor R.304</p><br>
+            <p>Addis Ababa, Ethiopia</p>
+          </li>
+        </ul>
+        <div class="social-icons">
+          <a class="telegram" href="#"><i class="fab fa-telegram"></i>
+          </i></a>
+          <a class="instagram" href="#"><i class="fab fa-instagram"></i>
+          </a>
+          <a class="linkedin" href="#"><i class="fab fa-linkedin"></i>
+          </a>
+          <a class="youtube" href="#"><i class="fab fa-youtube"></i>
+          </a>
+      </div>
+      </div>
+
+      
+    </footer>
+    <p style="color: white; 
+             background-color: black;
+             font-size: 20px;
+             text-align: center;
+             border: black;
+             padding-bottom: 10px;
+     ">&copy; Maverick Cars 2024</p>
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
